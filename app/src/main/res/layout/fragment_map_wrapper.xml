@@ -1,0 +1,291 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.luna.poketools.views.map.MapWrapperFragment">
+
+    <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:name="com.google.android.gms.maps.MapFragment"-->
+    <!--android:id="@+id/map"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+
+    <FrameLayout
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbar"
+        android:padding="16dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/edit_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/transparent"
+            android:drawableLeft="@mipmap/nav_ic_search"
+            android:drawablePadding="8dp"
+            android:hint="@string/search_hint"
+            android:lines="1" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btn_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/search_layout"
+        android:layout_marginRight="8dp"
+        android:background="@color/transparent"
+        android:src="@mipmap/home_ic_tips_nor" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/filter_fab"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:src="@mipmap/home_ic_filter"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/colorPrimary" />
+
+        <RelativeLayout
+            android:id="@+id/find_poke_fab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@mipmap/home_ic_scan_bg">
+
+            <ProgressBar
+                android:id="@+id/scan_progress_bar_start"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/scan_progress_bar_bg"
+                android:indeterminateOnly="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/scan_progress_bar_stop"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/home_ic_scan_circles" />
+
+        </RelativeLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/location_fab"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/home_ic_position"
+            app:backgroundTint="@android:color/white"
+            app:rippleColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutSuggestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_layout"
+        android:layout_margin="8dp"
+        android:background="#bb000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:id="@+id/txt_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/search_pokemon_map_suggestion"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/login_suggestions"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/txt_suggestions"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:text="@string/login_suggestions"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="italic" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/login_text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/login_suggestions"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:text="@string/login_account_text"-->
+        <!--android:textColor="@color/colorPrimarySquirtle"-->
+        <!--android:textSize="16sp" />-->
+
+        <ImageButton
+            android:id="@+id/closeSuggestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="4dp"
+            android:src="@drawable/ic_close_white_24dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_filter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_layout_heigh"
+        android:layout_alignParentBottom="true"
+        android:background="@color/material_white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f0f0f0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_poke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp"
+                android:layout_toLeftOf="@+id/switch_poke"
+                android:drawableLeft="@mipmap/filter_ic_pokemons"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@string/switch_search_type"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#f0f0f0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_stops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp"
+                android:layout_toLeftOf="@+id/switch_stops"
+                android:drawableLeft="@mipmap/filter_ic_pokestop"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@string/switch_search_pokestops"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#f0f0f0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_gyms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="8dp"
+                android:layout_toLeftOf="@+id/switch_gyms"
+                android:drawableLeft="@mipmap/filter_ic_elfroad"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@string/switch_search_gym"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <!--<com.dinuscxj.progressbar.CircleProgressBar-->
+        <!--android:id="@+id/progressbar"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--app:line_count="30"-->
+        <!--app:line_width="4dp"-->
+        <!--app:progress_background_color="@color/cardview_shadow_end_color"-->
+        <!--app:progress_end_color="@color/colorPrimary"-->
+        <!--app:progress_shader="linear"-->
+        <!--app:progress_start_color="@color/colorPrimary"-->
+        <!--app:progress_stroke_cap="round"-->
+        <!--app:progress_stroke_width="1dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--app:style="solid_line" />-->
+
+</RelativeLayout>

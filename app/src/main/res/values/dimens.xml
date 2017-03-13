@@ -1,0 +1,41 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="pokemon_marker">36dp</dimen>
+    <dimen name="pokestop_marker">24dp</dimen>
+    <dimen name="gym_marker">36dp</dimen>
+    <dimen name="pokemon_to_show_icon_size">48dip</dimen>
+    <dimen name="pokemon_to_show_icon_margin_left">8dip</dimen>
+
+    <dimen name="filter_layout_heigh">129dp</dimen>
+
+    <dimen name="layout_height_48dp">48dp</dimen>
+    <dimen name="layout_height_36dp">36dp</dimen>
+    <dimen name="layout_height_32dp">32dp</dimen>
+    <dimen name="layout_height_25dp">25dp</dimen>
+    <dimen name="layout_height_12dp">12dp</dimen>
+    <dimen name="layout_height_6dp">6dp</dimen>
+    <dimen name="layout_height_2dp">2dp</dimen>
+    <dimen name="layout_height_1dp">1dp</dimen>
+
+    <dimen name="layout_margin_48dp">48dp</dimen>
+    <dimen name="layout_margin_20dp">20dp</dimen>
+    <dimen name="layout_margin_16dp">16dp</dimen>
+    <dimen name="layout_margin_14dp">14dp</dimen>
+    <dimen name="layout_margin_12dp">12dp</dimen>
+    <dimen name="layout_margin_8dp">8dp</dimen>
+    <dimen name="layout_margin_4dp">4dp</dimen>
+    <dimen name="layout_margin_2dp">2dp</dimen>
+
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
+
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+</resources>
